@@ -18,41 +18,36 @@
     </div>
         {{!-- Fim das mensagens flash de sucesso --}}
     <section class="container">
+        <!-- Cabeçalho -->
         <section class="d-flex justify-content-between mt-4">
             <h2>Página inicial de Livros</h2>
             <a href="/livros/create" class="btn btn-primary">Cadastrar novo Livro</a>
         </section>
-    </section>
 
-    <hr>
+        <hr>
 
-    <section class="table-responsive container my-4">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Título</th>
-                    <th>Ano de Publicação</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-
-            <tbody>
+        <!-- Lista de Livros -->
+        <section class="container my-4">
+            <div class="row">
                 {{#each dados}}
-                <tr>
-                    <td>{{dataValues.id}}</td>
-                    <td>{{dataValues.titulo}}</td>
-                    <td>{{dataValues.ano_publicacao}}</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#modal{{dataValues.id}}">Excluir</a>
-                    </td>
-                </tr>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Título: {{dataValues.titulo}}</h5>
+                            <p class="card-text"><strong>ID:</strong> {{dataValues.id}}</p>
+                            <p class="card-text"><strong>Ano de Publicação:</strong> {{dataValues.ano_publicacao}}</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {{>modalDelete idItem = dataValues.id}}
 
                 {{/each}}
-            </tbody>
-        </table>
+            </div>
+        </section>
     </section>
 </section>
