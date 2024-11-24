@@ -1,0 +1,36 @@
+* {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.menu-hover:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.carousel-item {
+  height: 50vh;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 70%;
+}
+
+.w-200 {
+  width: 200px;
+  height: 200px;
+}
+
+
+.w-500 {
+  width: 500px;
+}
+
+.social i:hover{
+  color:blue;
+  transform: scale(1.2);
+  transition:0.3s;
+}
+
+.copy a{
+  text-decoration: none;
+}

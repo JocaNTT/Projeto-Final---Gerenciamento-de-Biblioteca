@@ -1,0 +1,32 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Livros</h1>
+        <form action="/livros/store" method="post">
+            <section class="mb-2">
+                <label for="titulo">Título</label>
+                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Título do Livro" required>
+            </section>
+
+            <section class="row mb-2">
+                <div class="col-md-12">
+                    <label for="ano_publicacao">Ano de Publicação</label>
+                        <input type="number" name="ano_publicacao" id="ano_publicacao" class="form-control" required>
+                </div>
+            </section>
+
+            <section class="mb-2">
+                <label for="autor">Escolha o Autor do Livro</label>
+                    <select name="autores" id="autores" class="form-select">
+                        <option value="">Escolha uma opcão...</option>
+                        {{#each dados}}
+                        <option value="{{dataValues.id}}">{{dataValues.nome}}</option>
+                        {{/each}}
+                    </select>
+            </section>
+
+                <section class="mb-2 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </section>
+            </form>
+        </section>
+    </section>
+</section>

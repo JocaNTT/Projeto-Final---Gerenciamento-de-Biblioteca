@@ -1,0 +1,29 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Autores</h1>
+        <form action="/autores/store" method="post">
+            <section class="mb-2">
+                <label for="nome">Nome do Autor</label>
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome do Autor" required>
+            </section>
+
+            <section class="row mb-2">
+                <div class="col-md-12">
+                    <label for="nacionalidade">Nacionalidade</label>
+                        <input type="text" name="nacionalidade" id="nacionalidade" class="form-control" required>
+                </div>
+            </section>
+
+            <section class="row mb-2">
+                <div class="col-md-12">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                        <input type="text" name="data_nascimento" id="data_nascimento" class="form-control" required>
+                </div>
+            </section>
+
+            <section class="mb-2 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Cadastrar Autor(a)</button>
+            </section>
+        </form>
+    </section>
+</section>
+</section>

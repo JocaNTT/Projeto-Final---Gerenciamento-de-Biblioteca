@@ -1,0 +1,58 @@
+<section class="container">
+    <div class="container mt-5">
+        {{!-- Exibição das mensagens flash de sucesso --}}
+        {{#if sucess_msg}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{sucess_msg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+    </div>
+    <div class="row my-2">
+        {{#if error_msg}}
+        <div class="alert alert-danger alert-dismissible fade show col-md-6 mx-auto" role="alert">
+            {{error_msg}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+    </div>
+        {{!-- Fim das mensagens flash de sucesso --}}
+    <section class="container">
+        <section class="d-flex justify-content-between mt-4">
+            <h2>Página inicial de Livros</h2>
+            <a href="/livros/create" class="btn btn-primary">Cadastrar novo Livro</a>
+        </section>
+    </section>
+
+    <hr>
+
+    <section class="table-responsive container my-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Ano de Publicação</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each dados}}
+                <tr>
+                    <td>{{dataValues.id}}</td>
+                    <td>{{dataValues.titulo}}</td>
+                    <td>{{dataValues.ano_publicacao}}</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                    </td>
+                </tr>
+
+                {{>modalDelete idItem = dataValues.id}}
+
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+</section>
